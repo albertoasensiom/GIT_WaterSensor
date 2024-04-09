@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package water_quality_sensor;
+
+// Message for water quality data
+message WaterQualityData {
+  string id = 1;
+  float pollution_level = 2;
+  string location = 3;
+  string timestamp = 4;
+}
+
+// Service definition for water quality sensor
+service WaterQualitySensorService {
+  // Method to stream real-time water quality data
+  rpc StreamWaterQualityData (StreamWaterQualityRequest) returns (stream WaterQualityData);
+}
+
+// Request message for streaming water quality data
+message StreamWaterQualityRequest {
+  // Add any parameters if needed
+}
