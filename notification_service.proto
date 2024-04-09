@@ -15,8 +15,18 @@ message Notification {
   string timestamp = 3;
 }
 
+// Message to request a notification
+message NotificationRequest {
+  string message = 1;
+}
+
 // Defining the service interface for the notification service.
 service NotificationService {
   // Creating a method to receive pollution alerts and notify users/authorities.
-  rpc Notify (Notification) returns (google.protobuf.Empty);
+  rpc Notify (NotificationRequest) returns (NotificationResponse);
+}
+
+// Response of notification
+message NotificationResponse {
+  string status = 1;
 }
