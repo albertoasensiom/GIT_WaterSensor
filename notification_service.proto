@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+// Defining the protocol version as proto3, the latest version of Protocol Buffers.
+
+// Specifying the package name for the notification service.
+package notification_service;
+
+// Defining the structure of the message used for notifications.
+message Notification {
+  // Assigning a unique identifier to the notification.
+  string id = 1;
+  // Including the message content of the notification.
+  string message = 2;
+  // Indicating the timestamp when the notification is generated.
+  string timestamp = 3;
+}
+
+// Defining the service interface for the notification service.
+service NotificationService {
+  // Creating a method to receive pollution alerts and notify users/authorities.
+  rpc Notify (Notification) returns (google.protobuf.Empty);
+}
