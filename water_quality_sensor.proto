@@ -1,22 +1,28 @@
 syntax = "proto3";
 
+// First I have to specify the protocol version to be used for Protocol Buffers (proto3) and define the package name for the water quality sensor service.
+
 package water_quality_sensor;
 
-// Message for water quality data
+// I define the structure of the message representing water quality data.
 message WaterQualityData {
+  // I assign a unique identifier to the data.
   string id = 1;
+  // I include the pollution level measured by the sensor.
   float pollution_level = 2;
+  // I specify the location where the data was collected.
   string location = 3;
+  // I indicate the timestamp when the data was recorded.
   string timestamp = 4;
 }
 
-// Service definition for water quality sensor
+// I define the service interface for the water quality sensor.
 service WaterQualitySensorService {
-  // Method to stream real-time water quality data
+  // I create a method for streaming real-time water quality data.
   rpc StreamWaterQualityData (StreamWaterQualityRequest) returns (stream WaterQualityData);
 }
 
-// Request message for streaming water quality data
+// I define the request message used for initiating the streaming of water quality data.
 message StreamWaterQualityRequest {
-  // Add any parameters if needed
+  // I can add any necessary parameters for the request here.
 }
