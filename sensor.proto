@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+// Defining protocol for the Sensor Service
+
+package sensor;
+
+// Service definition for the Sensor Service
+service Sensor {
+  // RPC method to publish water quality data
+  rpc PublishWaterQualityData (WaterQualityData) returns (PublishResponse);
+
+  // RPC method to subscribe to receive water quality data updates
+  rpc SubscribeToData (SubscriptionRequest) returns (stream WaterQualityData);
+}
+
+// Message type for water quality data
+message WaterQualityData {
+  // pH level of the water
+  float pH = 1;
+  
+  // Turbidity level of the water
+  float turbidity = 2;
+  
+  // Add more parameters as needed
+}
+
+// Message type for response to data publishing
+message PublishResponse {
+  // Status of the publish operation
+  string status = 1;
+}
+
+// Message type for subscription request
+message SubscriptionRequest {
+  // Specify any parameters needed for subscription
+}

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+// Defining protocol for the Analysis Service
+
+package analysis;
+
+// Service definition for the Analysis Service
+service Analysis {
+  // RPC method to analyze water quality data
+  rpc AnalyzeData (WaterQualityData) returns (AnalysisResult);
+
+  // RPC method to set pollution level thresholds
+  rpc SetThreshold (ThresholdRequest) returns (ThresholdResponse);
+}
+
+// Message type for analysis result
+message AnalysisResult {
+  // Result of the analysis
+  string result = 1;
+}
+
+// Message type for threshold request
+message ThresholdRequest {
+  // Pollution level threshold to be set
+  float threshold = 1;
+}
+
+// Message type for threshold response
+message ThresholdResponse {
+  // Status of the threshold setting operation
+  string status = 1;
+}
