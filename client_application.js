@@ -1,12 +1,12 @@
 // client_application.js
-const grpc = require('grpc');
+const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 
 const PROTO_PATH = __dirname + '/client_application.proto';
 const packageDefinition = protoLoader.loadSync(PROTO_PATH);
 const client_proto = grpc.loadPackageDefinition(packageDefinition).ClientApplication;
 
-const client = new client_proto('localhost:50053', grpc.credentials.createInsecure());
+const client = new client_proto('localhost:50057', grpc.credentials.createInsecure());
 
 function getPollutionLevel(location) {
   client.GetPollutionLevel({ location: location }, (err, response) => {

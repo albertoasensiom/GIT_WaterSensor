@@ -1,5 +1,5 @@
 // central_server.js
-const grpc = require('grpc');
+const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 
 const PROTO_PATH = __dirname + '/central_server.proto';
@@ -16,5 +16,5 @@ server.addService(server_proto.CentralServer.service, {
 });
 
 server.bind('0.0.0.0:50052', grpc.ServerCredentials.createInsecure());
-console.log('Central Server running at http://0.0.0.0:50052');
+console.log('Central Server running at http://0.0.0.0:50058');
 server.start();

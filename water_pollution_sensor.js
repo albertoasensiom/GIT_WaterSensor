@@ -1,5 +1,5 @@
 // water_pollution_sensor.js
-const grpc = require('grpc');
+const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 
 const PROTO_PATH = __dirname + '/water_pollution_sensor.proto';
@@ -15,6 +15,6 @@ server.addService(sensor_proto.WaterPollutionSensor.service, {
   },
 });
 
-server.bind('0.0.0.0:50051', grpc.ServerCredentials.createInsecure());
-console.log('Water Pollution Sensor running at http://0.0.0.0:50051');
+server.bind('0.0.0.0:50059', grpc.ServerCredentials.createInsecure());
+console.log('Water Pollution Sensor running at http://0.0.0.0:50059');
 server.start();
