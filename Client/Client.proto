@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package client;
+
+service DataService {
+  rpc GetWaterQualityData (google.protobuf.Empty) returns (WaterQualityData);
+  rpc GetTemperatureData (google.protobuf.Empty) returns (TemperatureData);
+  rpc GetCustomSensorData (google.protobuf.Empty) returns (CustomSensorData);
+}
+
+message WaterQualityData {
+  float pH = 1;
+  float conductivity = 2;
+  float turbidity = 3;
+}
+
+message TemperatureData {
+  float temperature = 1;
+}
+
+message CustomSensorData {
+  float WaterQuantity = 1;
+}
