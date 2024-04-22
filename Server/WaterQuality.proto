@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package water_quality;
-
-message WaterQualityData {
-  float pH = 1;
-  float conductivity = 2;
-  float turbidity = 3;
-}

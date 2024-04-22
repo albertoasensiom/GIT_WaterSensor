@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-package custom_sensor;
-
-message CustomSensorData {
-  float waterQuantity = 1;
-}

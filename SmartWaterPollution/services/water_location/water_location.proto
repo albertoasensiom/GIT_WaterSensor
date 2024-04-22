@@ -1,0 +1,12 @@
+import "google/protobuf/empty.proto";
+syntax = "proto3";
+
+package water_location;
+
+service WaterLocationService {
+    rpc GetLocationData (google.protobuf.Empty) returns (LocationResponse);
+}
+
+message LocationResponse {
+    string location = 1;
+}

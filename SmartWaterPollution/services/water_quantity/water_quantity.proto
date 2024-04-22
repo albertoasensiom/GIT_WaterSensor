@@ -1,0 +1,13 @@
+import "google/protobuf/empty.proto";
+syntax = "proto3";
+
+package water_quantity;
+
+service WaterQuantityService {
+    rpc GetQuantityData (google.protobuf.Empty) returns (QuantityResponse);
+}
+
+message QuantityResponse {
+    string location = 1;
+    double quantity = 2;
+}

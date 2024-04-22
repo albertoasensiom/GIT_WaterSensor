@@ -1,0 +1,13 @@
+import "google/protobuf/empty.proto";
+syntax = "proto3";
+
+package water_quality;
+
+service WaterQualityService {
+    rpc GetQualityData (google.protobuf.Empty) returns (QualityResponse);
+}
+
+message QualityResponse {
+    string location = 1;
+    double quality = 2;
+}

@@ -1,0 +1,16 @@
+import "google/protobuf/empty.proto";
+syntax = "proto3";
+
+package water_client;
+
+service WaterClientService {
+    rpc GetDataFromServers (google.protobuf.Empty) returns (ServerData);
+}
+
+message ServerData {
+    string water_quality_location = 1;
+    double water_quality_value = 2;
+    string water_quantity_location = 3;
+    double water_quantity_value = 4;
+    string water_location_location = 5;
+}
