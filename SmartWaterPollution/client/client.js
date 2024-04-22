@@ -1,18 +1,18 @@
 const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 
-// Load water_quality.proto
-const qualityProtoPath = __dirname + '/water_quality.proto';
+// Load water_quality.proto from the specified directory
+const qualityProtoPath = 'C:/Users/Alberto/Desktop/NCI/SEMESTER 2/Distributed System/CA1/GIT_WaterSensor/GIT_WaterSensor/SmartWaterPollution/services/water_quality/water_quality.proto';
 const qualityPackageDefinition = protoLoader.loadSync(qualityProtoPath);
 const quality_proto = grpc.loadPackageDefinition(qualityPackageDefinition).water_quality;
 
 // Load water_quantity.proto
-const quantityProtoPath = __dirname + '/water_quantity.proto';
+const quantityProtoPath = 'C:/Users/Alberto/Desktop/NCI/SEMESTER 2/Distributed System/CA1/GIT_WaterSensor/GIT_WaterSensor/SmartWaterPollution/services/water_quantity/water_quantity.proto';
 const quantityPackageDefinition = protoLoader.loadSync(quantityProtoPath);
 const quantity_proto = grpc.loadPackageDefinition(quantityPackageDefinition).water_quantity;
 
 // Load water_location.proto
-const locationProtoPath = __dirname + '/water_location.proto';
+const locationProtoPath = 'C:/Users/Alberto/Desktop/NCI/SEMESTER 2/Distributed System/CA1/GIT_WaterSensor/GIT_WaterSensor/SmartWaterPollution/services/water_location/water_location.proto';
 const locationPackageDefinition = protoLoader.loadSync(locationProtoPath);
 const location_proto = grpc.loadPackageDefinition(locationPackageDefinition).water_location;
 
