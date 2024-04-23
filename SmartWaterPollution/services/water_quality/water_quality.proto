@@ -1,13 +1,14 @@
-import "google/protobuf/empty.proto";
-syntax = "proto3";
+import "google/protobuf/empty.proto"; // Importing the empty.proto file from Google's Protocol Buffers library.
 
-package water_quality;
+syntax = "proto3"; // Declaring that this file uses Protocol Buffers version 3 syntax.
 
-service WaterQualityService {
-    rpc GetQualityData (google.protobuf.Empty) returns (QualityResponse);
+package water_quality; // Defining the package name as "water_quality" to organize related protocol buffer definitions.
+
+service WaterQualityService { // Defining a service named WaterQualityService.
+    rpc GetQualityData (google.protobuf.Empty) returns (QualityResponse); // Defining an RPC method named GetQualityData that takes no input and returns QualityResponse.
 }
 
-message QualityResponse {
-    string location = 1;
-    double quality = 2;
+message QualityResponse { // Defining a message named QualityResponse.
+    string location = 1; // Declaring a string field named location with a field number of 1 to represent the location of the water quality data.
+    double quality = 2; // Declaring a double field named quality with a field number of 2 to represent the quality of the water data.
 }

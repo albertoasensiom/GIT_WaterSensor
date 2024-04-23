@@ -8,7 +8,7 @@ const location_proto = grpc.loadPackageDefinition(packageDefinition).water_locat
 
 // Define the method to handle GetLocationData RPC calls
 function getLocationData(call, callback) {
-  const location = "Almería, Spain"; // Almería paradise
+  const location = "Almería, Spain: Water Source number 3"; // Almería paradise
 
   const response = {
     location: location
